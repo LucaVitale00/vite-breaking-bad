@@ -1,68 +1,40 @@
-<script>
+<script >
 
-export default{
-    name:"SingleCharacter",
-    props:{
-        /**
-         * @property {string} name
-         * @property {string} gender
-         * @property {string} status
-         * @property {string} species
-         * @property {stringe} id
-         */
-        character: {
-            type: Object,
-            required:true
-        }
-    },
-    data() {
-        return {
-        };
-    },
-    methods: {
-        
-    },
-};
+export default {
+
+    name: "SingleCharacter",
+    props: ["info"]
+
+}
 </script>
 
 <template>
-  <section>
-    <div class="card">
-        <img class="imagini card-img-top" :src="character.image" :alt="('Card image di' + character.name)" >
-        <div class="card-body">
-        <h5 class="card-title">{{character.name}}</h5>
-        <p class="card-text">{{character.gender}}</p>
-        <p class="card-text">{{character.species}}</p>
-        <p class="card-text">{{character.status}}</p>
-  </div>
-</div>
-  </section>
+
+    <div class="character text-center">
+        <img :src="info.image" alt="info.name">
+        <h4>{{ info.name }}</h4>
+        <div>{{ info.status }}</div>
+        <div class="font-weight-bold">{{ info.species }}</div>
+    </div>
+
+
 </template>
 
-<style scoped lang="scss">
-@use "../styles/general.scss" as * ;
+<style lang="scss" scoped>
+h4 {
+    text-transform: capitalize;
 
-h5{
-    color: white;
+    &::after {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 1px;
+        margin: 1rem, auto;
+    }
 }
 
-p{
-    color: grey;
+img {
+    border-radius: 50%;
+    box-shadow: 0 0 6px 3px rgba(#000, 0.15);
 }
-.imagini{
-    width: 250px;
-}
-
-.card{
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    background-color: rgb(46, 58, 70);
-    border-radius: 10px;
-}
-
-.card-body{
-    display: contents;
-}
-
 </style>
