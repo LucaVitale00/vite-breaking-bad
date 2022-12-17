@@ -2,7 +2,7 @@
 import axios from "axios";
 import AppHeader from './components/AppHeader.vue'
 import CharacterList from './components/CharacterList.vue'
-import Select from './components/select.vue';
+import Select from './components/Select.vue';
 import Result from './components/Result.vue';
 
 
